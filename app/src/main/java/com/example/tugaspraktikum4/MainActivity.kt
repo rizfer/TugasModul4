@@ -34,19 +34,37 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        fun onCheckboxClicked(view: View) {
-            var checked = view as CheckBox
-            if (CBC == checked) {
-                message(CBC.text.toString() + if (CBC.isChecked) " Anda memilih Hobi Coding " else " Anda batal memilih Hobi Coding ")
+        CBC.setOnCheckedChangeListener {buttonView, isChecked ->
+            if(CBC.isChecked){
+                var str:String= " Anda memilih Hobi " + CBC.text
+                message(str)
             }
-            if (CBR == checked) {
-                message(CBR.text.toString() + if (CBR.isChecked) " Anda memilih Hobi Reading " else " Anda batal memilih Hobi Reading ")
-            }
-
-            if (CBT == checked) {
-                message(CBT.text.toString() + if (CBT.isChecked) "Anda memilih Hobi Traveling" else " Anda batal memilih Hobi Traveling ")
+            else {
+                var str: String = " Anda batal memilih Hobi " + CBC.text
+                message(str)
             }
         }
+        CBR.setOnCheckedChangeListener {buttonView, isChecked ->
+            if(CBR.isChecked){
+                var str:String= " Anda memilih Hobi " + CBR.text
+                message(str)
+            }
+            else {
+                var str: String = " Anda batal memilih Hobi " + CBR.text
+                message(str)
+            }
+        }
+        CBT.setOnCheckedChangeListener {buttonView, isChecked ->
+            if(CBT.isChecked){
+                var str:String= " Anda memilih Hobi " + CBT.text
+                message(str)
+            }
+            else {
+                var str: String = " Anda batal memilih Hobi " + CBT.text
+                message(str)
+            }
+        }
+
 
         Btncancel.setOnClickListener {
             editNama.text.clear()
